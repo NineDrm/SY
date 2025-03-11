@@ -1,0 +1,42 @@
+[
+  {
+    "bookSourceName": "红豆",
+    "bookSourceType": 0,
+    "bookSourceUrl": "https://www.mayi93.com/",
+    "customOrder": -99870,
+    "enabled": true,
+    "enabledCookieJar": false,
+    "enabledExplore": true,
+    "exploreUrl": "@js:\nsort=[];\npush=(title,url,type1,type2)=>sort.push({\n\t\ttitle: title,\n\t\turl: url,\n\t\tstyle: {\n\t\t\t\tlayout_flexGrow: type1,\n\t\t\t\tlayout_flexBasisPercent: type2\n\t\t\t}\n\t});\npush(\"🧾男生小说🧾\",``,1,1)\n\tarList=[[\"全部\",\"0\"],[\"玄幻\",\"1\"],[\"都市\",\"2\"],[\"游戏\",\"6\"],[\"科幻\",\"7\"],[\"悬疑\",\"9\"],[\"历史\",\"11\"],[\"军事\",\"13\"],[\"竞技\",\"14\"],[\"奇幻\",\"89\"],[\"武侠\",\"90\"]]\n\tarList.map(([tag,uri])=>{\n\t\turl=`https://www.mayi93.com/api/book/list.json,{\n  \"body\": \"classify=${uri}&is_man=1&book_status=0&words_number=0&page={{page-1}}&size=20\",\n  \"method\": \"POST\"\n}`;\n\t\tpush(tag, url, 1, 0.25);\n\t\t});\n\t\tpush(\"🧾女生小说🧾\",``,1,1)\n\tmrList=[[\"全部\",\"0\"],[\"仙侠\",\"3\"],[\"言情\",\"4\"],[\"穿越\",\"5\"],[\"灵异\",\"10\"],[\"青春\",\"12\"],[\"现言\",\"15\"],[\"其他\",\"16\"],[\"体育\",\"91\"],[\"古言\",\"92\"],[\"幻言\",\"93\"],[\"女生\",\"94\"]]\n\tmrList.map(([tag,uri])=>{\n\t\turl=`https://www.mayi93.com/api/book/list.json,{\n  \"body\": \"classify=${uri}&is_man=1&book_status=0&words_number=0&page={{page-1}}&size=20\",\n  \"method\": \"POST\"\n}`;\n\t\tpush(tag, url, 1, 0.25);\n\t\t});\n\n\t//java.log(JSON.stringify(sort))\nJSON.stringify(sort)",
+    "header": "{\"lang\": \"cn\",\r\n\"ostype\": \"Android\"}",
+    "jsLib": "ua = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36 Edg/132.0.2957.129';",
+    "lastUpdateTime": 1741623691742,
+    "respondTime": 180000,
+    "ruleBookInfo": {
+      "name": ""
+    },
+    "ruleContent": {
+      "content": "$.data.body"
+    },
+    "ruleExplore": {
+      "bookList": ""
+    },
+    "ruleSearch": {
+      "author": "$.author",
+      "bookList": "<js>\nlet url=`https://www.mayi93.com/api/book/list.json`;\nbody=java.get(\"body\")\nresult=java.post(url,body,{\"lang\": \"cn\",\"ostype\": \"Android\"}).body()\n</js>\n$.data[*]",
+      "bookUrl": "https://www.mayi93.com/api/book/catalogue.json,{\n  \"body\": \"book_id={{$.book_id}}\",\n  \"method\": \"POST\"\n}",
+      "checkKeyWord": "",
+      "coverUrl": "$.images",
+      "intro": "$.description",
+      "kind": "$.classify_name",
+      "name": "$.book_name"
+    },
+    "ruleToc": {
+      "chapterList": "$.data.chapter_list[*]",
+      "chapterName": "$.title",
+      "chapterUrl": "https://www.mayi93.com/api/book/catalogue-view.json,{\n  \"body\": \"section_id={{$.id}}\",\n  \"method\": \"POST\"\n}"
+    },
+    "searchUrl": "<js>\nlet body=`keywords=${key}&page=${page-1}&size=20`;\njava.put(\"body\",body)\n\"https{{page}}\"\n</js>",
+    "weight": 0
+  }
+]

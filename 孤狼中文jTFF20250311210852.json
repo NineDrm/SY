@@ -1,0 +1,50 @@
+[
+  {
+    "bookSourceComment": "by:繁華落盡終成殤",
+    "bookSourceGroup": "验证码",
+    "bookSourceName": "孤狼中文",
+    "bookSourceType": 0,
+    "bookSourceUrl": "https://www.gulangxs.com",
+    "bookUrlPattern": "https://www.gulangxs.com/gl/\\w+.html",
+    "coverDecodeJs": "",
+    "customOrder": -99871,
+    "enabled": true,
+    "enabledCookieJar": true,
+    "enabledExplore": true,
+    "exploreUrl": "@js:\nvar result = [];\nvar push = (title, url, size) => result.push({\n    \"title\": title,\n    \"url\": url,\n    \"style\": {\n        \"layout_flexGrow\": 1,\n        \"layout_flexBasisPercent\": size\n    }\n});\nvar baseUrl = \"https://www.gulangxs.com\";\nvar tag = java.ajax(baseUrl);\nif (tag) {\n    var a = org.jsoup.Jsoup.parse(tag).select(\".navbar-nav a\");\n    push(\"🔥分类小说🔥\", null, 1);\n    for (var i in a) {\n        var title = a[i].text();\n        var url = a[i].attr(\"href\");\n        var size = 0.33;\n        title = String(title).replace(/\\s/g, \"\");\n        url = baseUrl + String(url).replace(/\\d+\\/$/, \"\") + \"/{{page}}.html\";      \n        push(title, url, size);\n    }\n} \nJSON.stringify(result);",
+    "header": "{\"User-Agent\": \"Mozilla/5.0 (Linux; Android 10;  Build/QP1A.190711.020) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.106 Mobile Safari/537.36\"}",
+    "lastUpdateTime": 1741695377078,
+    "respondTime": 180000,
+    "ruleBookInfo": {
+      "author": "h6.1@text",
+      "coverUrl": "img@src",
+      "intro": "class.bookintro@text##简介：",
+      "kind": "h6.0:2:3@text##分类：|状态：|更新：",
+      "name": "h1@text"
+    },
+    "ruleContent": {
+      "content": "#content@html",
+      "nextContentUrl": "text.下一页@href",
+      "replaceRegex": "##{{chapter.title+\"(.*)\"}}"
+    },
+    "ruleExplore": {
+      "name": ""
+    },
+    "ruleSearch": {
+      "author": "h5@text",
+      "bookList": ".media",
+      "bookUrl": "a.0@href",
+      "coverUrl": "img@.img-thumbnail@src",
+      "intro": "p.0@text",
+      "lastChapter": "",
+      "name": "h4@a@text"
+    },
+    "ruleToc": {
+      "chapterList": "class.list-group clearfix@li@a",
+      "chapterName": "text",
+      "chapterUrl": "href"
+    },
+    "searchUrl": "/qaz.php,{\n\"method\": \"post\",\n\"body\": \"search={{key}}&captcha=\n{{java.getVerificationCode('https://www.gulangxs.com/captcha.php')}}\"\n}",
+    "weight": 0
+  }
+]

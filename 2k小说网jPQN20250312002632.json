@@ -1,0 +1,50 @@
+[
+  {
+    "bookSourceComment": "//九梦修改目录下一页",
+    "bookSourceGroup": "",
+    "bookSourceName": "2k小说网",
+    "bookSourceType": 0,
+    "bookSourceUrl": "https://www.kkxsz.com",
+    "customOrder": -99872,
+    "enabled": true,
+    "enabledCookieJar": true,
+    "enabledExplore": true,
+    "header": "{\"User-Agent\": \"Mozilla/5.0 (Linux; U; Android 14; zh-cn; M2102K1AC Build/UKQ1.231207.002) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/109.0.5414.118 Mobile Safari/537.36 MQQBrowser/10.1.0\"}",
+    "lastUpdateTime": 1741710322818,
+    "respondTime": 180000,
+    "ruleBookInfo": {
+      "author": "[property=\"og:novel:author\"]@content",
+      "canReName": "",
+      "coverUrl": "[property=\"og:image\"]@content",
+      "init": "",
+      "intro": "[property=\"og:description\"]@content",
+      "kind": "[property~=category|status|update_time]@content",
+      "lastChapter": "[property~=las?test_chapter_name]@content",
+      "name": "[property=\"og:novel:book_name\"]@content",
+      "tocUrl": "<js>\nmaxpage=java.getString(\".select@option.-1@value\");\njava.put('maxpage',maxpage)\n</js>\nhttps://www.kkxsz.com/index.php?action=loadChapterPage,{\"headers\": {\"Content-Type\": \"application/x-www-form-urlencoded; charset=UTF-8\",\"X-Requested-With\": \"XMLHttpRequest\",\"Referer\": \"{{baseUrl}}\"},\"body\": \"id={{baseUrl.match(/book\\/(.*)\\.html/)[1]}}&page=1\",\"method\": \"POST\"}"
+    },
+    "ruleContent": {
+      "content": "#content p@textNodes"
+    },
+    "ruleExplore": {},
+    "ruleSearch": {
+      "author": ".dlS.0@a@text",
+      "bookList": "class.list dList@ul@li",
+      "bookUrl": "a.0@href",
+      "checkKeyWord": "女知青",
+      "coverUrl": "img@src",
+      "intro": ".intro@text",
+      "kind": ".dlS.1@a@text",
+      "name": "a.1@text"
+    },
+    "ruleToc": {
+      "chapterList": "$.data[*]",
+      "chapterName": "chaptername",
+      "chapterUrl": "chapterurl",
+      "nextTocUrl": "@js:\nmaxpage=java.get('maxpage')\nvar list=[];\nmaxpage=Number(maxpage)\nfor (var i = 1; i <= maxpage; i++) {\ninurl= baseUrl.replace(/page=\\d+/,'page='+i);\nlist.push(inurl)\n}\nlist;",
+      "updateTime": ""
+    },
+    "searchUrl": "<js>\ncookie.removeCookie(\"https://www.rrssk.com\")\njava.get('https://www.rrssk.com/?89',{})\nresult=`https://www.rrssk.com/keywords-${key}.html,{\n  \"headers\": {\n    \"Cookie\": \"${cookie.getCookie(\"https://www.rrssk.com\")}\"\n  }\n}`\n</js>",
+    "weight": 0
+  }
+]

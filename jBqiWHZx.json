@@ -1,0 +1,54 @@
+[
+  {
+    "bookSourceComment": "//另一个书友圈\n2025.03.10\n①改版升级：正文再解析目录链接，解决章节需要合并的问题\n2025.03.10\n①修复因斜杠转义\\/，被判定为链接不同，造成的正文加载所有章节。Bug发现= =\n2025.01.31\n①修改部分代码，使用text.下一@href、章节名合并，达到快速修复章节的目的。参考= =指导。\n2025.01.17\n①修复目录，参考1.木叶书源 2.怣疯的目录修复\n②添加发现",
+    "bookSourceGroup": "",
+    "bookSourceName": "✒︎•笔趣阁(fd80s)(目录修复升级版)",
+    "bookSourceType": 0,
+    "bookSourceUrl": "https://www.fd80s.com/",
+    "bookUrlPattern": "https?://www.fd80s.com/\\d+/\\d+/",
+    "customOrder": -99869,
+    "enabled": true,
+    "enabledCookieJar": true,
+    "enabledExplore": true,
+    "exploreUrl": "[\n  {\n    \"title\": \"🌊 分类 🌊\",\n    \"url\": \"\",\n    \"style\": {\n      \"layout_flexGrow\": 1,\n      \"layout_flexBasisPercent\": 1\n    }\n  },\n  {\n    \"title\": \"首页\",\n    \"url\": \"/\",\n    \"style\": {\n      \"layout_flexGrow\": 1,\n      \"layout_flexBasisPercent\": 0.2\n    }\n  },\n  {\n    \"title\": \"热门\",\n    \"url\": \"/top\",\n    \"style\": {\n      \"layout_flexGrow\": 1,\n      \"layout_flexBasisPercent\": 0.2\n    }\n  },\n  {\n    \"title\": \"玄幻\",\n    \"url\": \"/list/xhtxt/{{page}}.html\",\n    \"style\": {\n      \"layout_flexGrow\": 1,\n      \"layout_flexBasisPercent\": 0.2\n    }\n  },\n  {\n    \"title\": \"武侠\",\n    \"url\": \"/list/wxtxt/{{page}}.html\",\n    \"style\": {\n      \"layout_flexGrow\": 1,\n      \"layout_flexBasisPercent\": 0.2\n    }\n  },\n  {\n    \"title\": \"都市\",\n    \"url\": \"/list/dstxt/{{page}}.html\",\n    \"style\": {\n      \"layout_flexGrow\": 1,\n      \"layout_flexBasisPercent\": 0.2\n    }\n  },\n  {\n    \"title\": \"历史\",\n    \"url\": \"/list/lstxt/{{page}}.html\",\n    \"style\": {\n      \"layout_flexGrow\": 1,\n      \"layout_flexBasisPercent\": 0.2\n    }\n  },\n  {\n    \"title\": \"网游\",\n    \"url\": \"/list/wytxt/{{page}}.html\",\n    \"style\": {\n      \"layout_flexGrow\": 1,\n      \"layout_flexBasisPercent\": 0.2\n    }\n  },\n  {\n    \"title\": \"科幻\",\n    \"url\": \"/list/khtxt/{{page}}.html\",\n    \"style\": {\n      \"layout_flexGrow\": 1,\n      \"layout_flexBasisPercent\": 0.2\n    }\n  },\n  {\n    \"title\": \"其它\",\n    \"url\": \"/list/qttxt/{{page}}.html\",\n    \"style\": {\n      \"layout_flexGrow\": 1,\n      \"layout_flexBasisPercent\": 0.2\n    }\n  },\n  {\n    \"title\": \"女生\",\n    \"url\": \"/list/nstxt/{{page}}.html\",\n    \"style\": {\n      \"layout_flexGrow\": 1,\n      \"layout_flexBasisPercent\": 0.2\n    }\n  },\n  {\n    \"title\": \"全本\",\n    \"url\": \"/full/all/{{page}}.html\",\n    \"style\": {\n      \"layout_flexGrow\": 1,\n      \"layout_flexBasisPercent\": 0.2\n    }\n  },\n  {\n    \"title\": \"\",\n    \"url\": \"\",\n    \"style\": {\n      \"layout_flexGrow\": 1,\n      \"layout_flexBasisPercent\": 0.2\n    }\n  }\n]",
+    "header": "{\n\"User-Agent\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36\"\n}",
+    "lastUpdateTime": 1741613990374,
+    "respondTime": 180000,
+    "ruleBookInfo": {
+      "author": "class.bookdes@tag.p.0@tag.a.0@text",
+      "coverUrl": "class.book@tag.a.0@tag.img@src",
+      "init": "",
+      "intro": "class.bookintro@tag.p@textNodes",
+      "kind": "class.bookdes@tag.p.1@tag.span.0@text",
+      "lastChapter": "class.bookdes@tag.p.2@tag.a.0@text",
+      "name": "class.booktitle@text",
+      "tocUrl": "text.章节目录@href",
+      "wordCount": "class.bookdes@tag.p.1@text##.*\\|"
+    },
+    "ruleContent": {
+      "content": "<js>\nif(baseUrl.match(/data:;base64/)){\n   pre=java.ajax(source.key+java.hexDecodeToString(result));\n  java.log(pre);\n  dur=java.getString(\"text.下一章@href\",pre)\n  java.log(dur);\n  result=java.ajax(source.key+dur)\n}\nresult;\n</js>\nid.chaptercontent@tag.p@textNodes",
+      "nextContentUrl": "text.下一页@href",
+      "replaceRegex": ""
+    },
+    "ruleExplore": {},
+    "ruleSearch": {
+      "author": "tag.dd.1@tag.a.0@text||li@a.1@text",
+      "bookList": "class.content pc-pl pc-pr@tag.dl&&.booklist dl&&.booklist li",
+      "bookUrl": "tag.dt.0@tag.a.0@href||li@a.0@href",
+      "checkKeyWord": "https://www.fd80s.com/499/499138/",
+      "coverUrl": "tag.a.0@tag.img@data-src",
+      "intro": "tag.dd.0@textNodes",
+      "kind": "tag.dd.1@tag.span.0@text&&tag.dd.1@tag.span.2@text&&li@span@text##\\[|\\]",
+      "name": "tag.dt.0@tag.a.0@text||li@a.0@text",
+      "wordCount": "tag.dd.1@tag.span.1@text"
+    },
+    "ruleToc": {
+      "chapterList": "class.all@ul@li@a\n@js:\nX=result.toArray().map(x=>({\ntext:x.text(),href:String(x.attr('onclick')).replace(/.*href='([^']+)'/g,\"$1\")\n}))\nfor(i in X){\n  if(!X[i].href&&i>0){ \n    X[i].href=`data:;base64,${java.base64Encode(X[i-1].href||\"\")},{\"type\":\"null\"}`;\n  }\n}\nX;",
+      "chapterName": "text",
+      "chapterUrl": "href",
+      "nextTocUrl": "option@value"
+    },
+    "searchUrl": "/search,{\n  \"body\": \"searchkey={{key}}\",\n  \"method\": \"POST\",\n  \"webView\": true\n}",
+    "weight": 0
+  }
+]

@@ -1,0 +1,28 @@
+[
+  {
+    "articleStyle": 0,
+    "customOrder": -10098611,
+    "enableJs": true,
+    "enabled": true,
+    "enabledCookieJar": true,
+    "jsLib": "",
+    "lastUpdateTime": 0,
+    "loadWithBaseUrl": true,
+    "loginCheckJs": "",
+    "loginUi": "[{\n\t\"name\": \"设置默认源变量\",\n\t\"type\": \"button\",\n\t\"action\": \"checkAndSetSourceVariable()\",\n\t\"style\": {\n\t\t\"layout_flexGrow\": 1,\n\t\t\"layout_flexBasisPercent\": 0.39\n\t\t}\n\t}\n]",
+    "loginUrl": " function checkAndSetSourceVariable() {\n      source.setVariable(\"搜索词:视频&路线:0\");\n     java.longToast(\"已设置默认源变量\");\n}",
+    "ruleArticles": "[class=\"resent-grid-img recommended-grid-img\"]",
+    "ruleContent": "@js:\nvar list=[]\nlist=java.getElements(\"fieldset@button@a\");\nMlx=list.length;\nMlxl=Number(Mlx);\nMlx=Number(Mlx)-1;\nif (!source.getVariable().match(/搜索词:.+&路线:\\d+/)){\nsource.setVariable(\"搜索词:视频&路线:0\")\njava.longToast(\"检测到源变量不合规，已设置为默认\")\n}else{\n\t lx=Number(source.getVariable().match(/路线:(\\d+)/)[1])\n\t if (lx>Mlx){\n\t java.longToast(\"数字过大，当前仅有\"+Mlxl+\"条路线，只能输入0到\"+Mlx+\"的任意整数，默认设置为第一条\")\n\t VB=String(source.getVariable()).replace(/路线:.+/,\"路线:0\");\n\t source.setVariable(VB)\n\t }\n}\nlx=Number(source.getVariable().match(/路线:(\\d+)/)[1]);\nlurl=\"https://jtyn120.buzz\"+java.getString(\"a.\"+lx+\"@href\",list);\nltext=java.getString(\"a.\"+lx+\"@text\",list);\nhtml=java.ajax(lurl)\nurl=html.match(/playUrl = '([^']+)'/)[1];\njava.startBrowser(url, \"播放中\");\n\"当前播放地址：\\n\"+url+\"\\n当前路线：\\n\"+ltext",
+    "ruleImage": "img@src",
+    "ruleLink": "a@href",
+    "ruleNextPage": "page",
+    "rulePubDate": "time@text||p@text",
+    "ruleTitle": "h3@text||img@alt",
+    "singleUrl": false,
+    "sortUrl": "搜索🔍::https://jtyn120.buzz/lookup/{{source.getVariable().match(/搜索词:(.+)&/)[1]}}/L/{{page}}",
+    "sourceComment": "//使用前必须将源变量设为合法形式(可以在登录界面设置默认):\n搜索词:搜索词&路线:整数",
+    "sourceIcon": "",
+    "sourceName": "精童欲女",
+    "sourceUrl": "https://jtyn120.buzz/lookup/%E7%B2%89%E5%AB%A9/L/2"
+  }
+]

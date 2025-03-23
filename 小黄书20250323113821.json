@@ -1,0 +1,56 @@
+[
+  {
+    "bookSourceComment": "//壬二酸\n//柚屿完成发现解密",
+    "bookSourceGroup": "",
+    "bookSourceName": "小黄书",
+    "bookSourceType": 0,
+    "bookSourceUrl": "https://www.xhs143ww.vip:2024",
+    "customOrder": -99967,
+    "enabled": true,
+    "enabledCookieJar": false,
+    "enabledExplore": true,
+    "exploreUrl": "[\n    {\"title\": \"题材\", \"url\": \"\", \"style\": {\"layout_flexGrow\": 1, \"layout_flexBasisPercent\": 1}},\n    {\"title\": \"全部\", \"url\": \"/category/xiaoshuo/-{{page}}-,{\\\"webView\\\":true}\", \"style\": {\"layout_flexGrow\": 1, \"layout_flexBasisPercent\": 0.2}},\n    {\"title\": \"都市\", \"url\": \"/category/xiaoshuo/69-{{page}}-,{\\\"webView\\\":true}\", \"style\": {\"layout_flexGrow\": 1, \"layout_flexBasisPercent\": 0.2}},\n    {\"title\": \"校园\", \"url\": \"/category/xiaoshuo/70-{{page}}-,{\\\"webView\\\":true}\", \"style\": {\"layout_flexGrow\": 1, \"layout_flexBasisPercent\": 0.2}},\n    {\"title\": \"乱伦\", \"url\": \"/category/xiaoshuo/73-{{page}}-,{\\\"webView\\\":true}\", \"style\": {\"layout_flexGrow\": 1, \"layout_flexBasisPercent\": 0.2}},\n    {\"title\": \"玄幻\", \"url\": \"/category/xiaoshuo/78-{{page}}-,{\\\"webView\\\":true}\", \"style\": {\"layout_flexGrow\": 1, \"layout_flexBasisPercent\": 0.2}},\n    {\"title\": \"系统\", \"url\": \"/category/xiaoshuo/72-{{page}}-,{\\\"webView\\\":true}\", \"style\": {\"layout_flexGrow\": 1, \"layout_flexBasisPercent\": 0.2}},\n    {\"title\": \"穿越\", \"url\": \"/category/xiaoshuo/74-{{page}}-,{\\\"webView\\\":true}\", \"style\": {\"layout_flexGrow\": 1, \"layout_flexBasisPercent\": 0.2}},\n    {\"title\": \"武侠\", \"url\": \"/category/xiaoshuo/75-{{page}}-,{\\\"webView\\\":true}\", \"style\": {\"layout_flexGrow\": 1, \"layout_flexBasisPercent\": 0.2}},\n    {\"title\": \"奇幻\", \"url\": \"/category/xiaoshuo/81-{{page}}-,{\\\"webView\\\":true}\", \"style\": {\"layout_flexGrow\": 1, \"layout_flexBasisPercent\": 0.2}},\n    {\"title\": \"贤者\", \"url\": \"/category/xiaoshuo/82-{{page}}-,{\\\"webView\\\":true}\", \"style\": {\"layout_flexGrow\": 1, \"layout_flexBasisPercent\": 0.2}},\n    {\"title\": \"历史\", \"url\": \"/category/xiaoshuo/80-{{page}}-,{\\\"webView\\\":true}\", \"style\": {\"layout_flexGrow\": 1, \"layout_flexBasisPercent\": 0.2}},\n    {\"title\": \"明星\", \"url\": \"/category/xiaoshuo/79-{{page}}-,{\\\"webView\\\":true}\", \"style\": {\"layout_flexGrow\": 1, \"layout_flexBasisPercent\": 0.2}},\n    {\"title\": \"科幻\", \"url\": \"/category/xiaoshuo/77-{{page}}-,{\\\"webView\\\":true}\", \"style\": {\"layout_flexGrow\": 1, \"layout_flexBasisPercent\": 0.2}},\n    {\"title\": \"同人\", \"url\": \"/category/xiaoshuo/76-{{page}}-,{\\\"webView\\\":true}\", \"style\": {\"layout_flexGrow\": 1, \"layout_flexBasisPercent\": 0.2}}\n]",
+    "jsLib": "function AESdecode(result){ \n  \tconst { java } = this;\n  b64 = java.base64DecodeToByteArray(result)\n  \tkey = java.hexDecodeToByteArray('5742306e4d5a48586c784e6e644f5265')\n  \tiv = java.hexDecodeToByteArray('dbc529185e7e1353ee5d3ea96f9d5785')\n\t data = java.createSymmetricCrypto(\n\t \t\"AES/CBC/PKCS7Padding\",\n\t \tkey,\n\t \tiv\n\t \t).decryptStr(b64);\n\t // java.log(data)\n  return data;\n}",
+    "lastUpdateTime": 1742700979647,
+    "respondTime": 180000,
+    "ruleBookInfo": {
+      "author": "",
+      "coverUrl": "class.imgbox@tag.img.0@src",
+      "intro": "class.m-desc xs-show@textNodes",
+      "kind": "class.fix@tag.p.1@text&&class.fix@tag.p.2@text##类 别：|状 态：",
+      "lastChapter": "class.fix@tag.p.5@tag.a@textNodes",
+      "name": "class.imgbox@tag.img.0@alt"
+    },
+    "ruleContent": {
+      "content": "id.art-content@tag.div@text"
+    },
+    "ruleExplore": {
+      "author": "$.author",
+      "bookList": "<js>\nres = result.match(/APP.data = '([^']+)'/)[1]\nlist = String(AESdecode(res)).match(/list\":(\\[.+?\\])/)[1];\nlist\n</js>$[*]",
+      "bookUrl": "https://www.xhs143ww.vip:2024/xs_ls/{{$.book_id_attr}}",
+      "coverUrl": "$.pic##^##https://tu.tqxty.cn/",
+      "intro": "$.content",
+      "kind": "$.tags",
+      "lastChapter": "$.latest_chapter_name",
+      "name": "$.name"
+    },
+    "ruleSearch": {
+      "author": "",
+      "bookList": "class.novel-grid-item",
+      "bookUrl": "tag.a@href",
+      "checkKeyWord": "",
+      "coverUrl": "tag.img@src",
+      "intro": "",
+      "kind": "",
+      "lastChapter": "",
+      "name": "class.novel-grid-item-title@text"
+    },
+    "ruleToc": {
+      "chapterList": "id.myList@tag.li",
+      "chapterName": "tag.a@text",
+      "chapterUrl": "tag.a@href"
+    },
+    "searchUrl": "/so/novel/{{key}}/{{page}}",
+    "weight": 0
+  }
+]
